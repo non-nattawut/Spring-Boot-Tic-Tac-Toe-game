@@ -49,10 +49,10 @@ and all winner check I use recursive because I think it uses less code and more 
 ### to check diagonal win
 - I use `checkWinnerDiagonalLeftToRight()` and `checkWinnerDiagonalRightToLeft()`
 - the function do as it name but when use these function need to implement it 2 times
-- because tic-tac-toe table row > column or column > rol the traversal of Diagonal checker will different (traversal by row or by column)
+- because tic-tac-toe table `row > column` or `column > rol` the traversal of Diagonal checker will different (traversal by row or by column)
 
 
-`
+```
 public String checkWinner(){
     if (buttonTable.isEmpty()){
         return null;
@@ -116,9 +116,9 @@ public String checkWinner(){
 
     return "DRAW";
 }
-`
+```
 
-`
+```
 private String checkWinnerHorizontal(List<String> buttonTable1D, int j, int col){
     if(buttonTable1D.get(j).equalsIgnoreCase(buttonTable1D.getFirst())){
         if (j == col - 1){
@@ -129,9 +129,9 @@ private String checkWinnerHorizontal(List<String> buttonTable1D, int j, int col)
         return null;
     }
 }
-`
+```
 
-`
+```
 private String checkWinnerDiagonalLeftToRight(int i, int j, int init_i, int init_j, int bound){
     if (buttonTable.get(i).get(j).equalsIgnoreCase(buttonTable.get(init_i).get(init_j))){
         if (j == bound - 1){
@@ -142,9 +142,9 @@ private String checkWinnerDiagonalLeftToRight(int i, int j, int init_i, int init
         return null;
     }
 }
-`
+```
 
-`
+```
 private String checkWinnerDiagonalRightToLeft(int i, int j, int init_i, int init_j, int row){
     if (buttonTable.get(i).get(j).equalsIgnoreCase(buttonTable.get(init_i).get(init_j))){
         if (j == 0 || j == init_j - (row - 1)){ // j == 0 for fixed row case
@@ -155,4 +155,4 @@ private String checkWinnerDiagonalRightToLeft(int i, int j, int init_i, int init
         return null;
     }
 }
-`
+```
