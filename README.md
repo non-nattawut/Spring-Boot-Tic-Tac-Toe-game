@@ -1,7 +1,7 @@
 # Spring-Boot-Tic-Tac-Toe-game
 ## Requirements
-- intellij IDEA
-- JAVA 21 SDK [JAVA SDK](https://www.oracle.com/th/java/technologies/downloads/)
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/download/?section=windows)
+- [JAVA 21 SDK](https://www.oracle.com/th/java/technologies/downloads/)
 
 ## Installation Guide
 1. Clone or Download this repository
