@@ -24,12 +24,15 @@
 
 ## Web Page
 - open in any browser you prefer
-- localhost:8080/game for play tic tac toe <br />
+- localhost:8080/game
+- for play tic tac toe <br />
 ![image](https://github.com/user-attachments/assets/787ba14a-7f8b-4741-9290-345718c0e9cc)
 
-- localhost:8080/replays for replay list that you have played and you can watch the replay from this page <br />
+- localhost:8080/replays
+- for replay list that you have played and you can watch the replay from this page <br />
 ![image](https://github.com/user-attachments/assets/e7853b67-e834-4ecc-8e19-d6fd575e1abc)
 
-- localhost:8080/watchReplay this page will show after you hit watch button in replays page <br />
+- localhost:8080/watchReplay
+- this page will show after you hit watch button in replays page <br />
 ![image](https://github.com/user-attachments/assets/efa8ffe1-c3c6-4a93-806b-ce48a5e9f94c)
 
