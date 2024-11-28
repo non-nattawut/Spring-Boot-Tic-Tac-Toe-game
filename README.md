@@ -9,17 +9,18 @@
 3. From File Explorer open XogameApplication <br />
 ![image](https://github.com/user-attachments/assets/2405be50-4d6b-4b10-89ff-b2445a7cd867)
 
-5. Hit the run button <br />
+4. Hit the run button <br />
 ![image](https://github.com/user-attachments/assets/0385a1eb-af1e-4d24-894a-912296a57ad2)
 
-7. If you cannot run, IDE might tell you to select the JAVA compiler <br />
+5. If anything is fine you will get this message "Completed initialization" <br />
+![image](https://github.com/user-attachments/assets/2673530a-1c0f-4006-8768-898d4b1b0490)
+
+6. If you cannot run, IDE might tell you to select the JAVA compiler <br />
 ![image](https://github.com/user-attachments/assets/3d8b4e91-84ec-4e87-940d-3c83ad0037c2)
 
-9. I recommend using JAVA 21 because this project was built on JAVA 21 <br />
+7. I recommend using JAVA 21 because this project was built on JAVA 21 <br />
 ![image](https://github.com/user-attachments/assets/260a3882-79b3-406f-9c95-18562ca1dd6f)
 
-11. If anything is fine you will get this message "Completed initialization" <br />
-![image](https://github.com/user-attachments/assets/2673530a-1c0f-4006-8768-898d4b1b0490)
 
 ## Web Page
 - open in any browser you prefer
