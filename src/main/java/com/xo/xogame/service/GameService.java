@@ -48,11 +48,11 @@ public class GameService {
         for (int i = 0; i < row; i++) {
             String winner = checkWinnerHorizontal(buttonTable.get(i), 1, col);
 
-            // fixed col
+            // traverse by row
             if (winner == null && i <= row - col){
                 winner = checkWinnerDiagonalLeftToRight(i, 0, i, 0, col);
             }
-            // fixed col
+            // traverse by row
             if (winner == null && i <= row - col){
                 winner = checkWinnerDiagonalRightToLeft(i, col - 1, i, col - 1, row);
             }
@@ -64,14 +64,14 @@ public class GameService {
 
         // Diagonal win
         for (int i = 0; i < col; i++) {
-            // fixed row
+            // traverse by column
             if (i <= col - row){
                 String winner = checkWinnerDiagonalLeftToRight(0, i, 0, i, row + i);
                 if (winner != null){
                     return winner;
                 }
             }
-            // fixed row
+            // traverse by column
             if (i >= row - 1){
                 String winner = checkWinnerDiagonalRightToLeft(0, i, 0, i, row);
                 if (winner != null){
