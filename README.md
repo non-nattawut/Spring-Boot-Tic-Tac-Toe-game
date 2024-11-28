@@ -15,11 +15,12 @@
 5. If anything is fine you will get this message "Completed initialization" <br />
 ![image](https://github.com/user-attachments/assets/2673530a-1c0f-4006-8768-898d4b1b0490)
 
-6. If you cannot run, IDE might tell you to select the JAVA compiler <br />
-![image](https://github.com/user-attachments/assets/3d8b4e91-84ec-4e87-940d-3c83ad0037c2)
+6. If you cannot run, IDE might tell you to select the JAVA SDK <br />
+![image](https://github.com/user-attachments/assets/ec9c19ec-7ad6-40d7-9cd4-37fb50949ebf)
 
-7. I recommend using JAVA 21 because this project was built on JAVA 21 <br />
-![image](https://github.com/user-attachments/assets/260a3882-79b3-406f-9c95-18562ca1dd6f)
+8. I recommend using JAVA 21 because this project was built on JAVA 21 <br />
+![image](https://github.com/user-attachments/assets/61f21418-82e3-4249-9f89-83c4c5aa76fb)
+
 
 
 ## Web Page
