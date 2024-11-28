@@ -36,3 +36,7 @@
 - this page will show after you hit watch button in replays page <br />
 ![image](https://github.com/user-attachments/assets/efa8ffe1-c3c6-4a93-806b-ce48a5e9f94c)
 
+## Design
+![image](https://github.com/user-attachments/assets/ba96ae01-033a-4e0b-90c1-8fca2ce4baa5)
+
+
