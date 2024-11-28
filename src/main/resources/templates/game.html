@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tic Tac Toe Game!</title>
+
+    <style>
+        /* Center container styles */
+        .center-container {
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center;    /* Center items horizontally */
+            justify-content: center; /* Center items vertically if needed */
+            height: 100vh;          /* Full viewport height for vertical centering */
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: center; /* Align buttons in each row */
+            margin: 5px 0;           /* Add spacing between rows */
+        }
+
+        /* Optional: Style the buttons */
+        button {
+            margin: 5px; /* Add spacing between buttons */
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        // Display the alert if there's a message
+        function showAlert() {
+            const message = document.getElementById("alertMessage").value;
+            if (message) {
+                alert(message);
+            }
+        }
+    </script>
+
+</head>
+
+<body onload="showAlert()">
+    <input type="hidden" id="alertMessage" th:value="${alertMessage}" />
+    <div class="center-container">
+        <h1 th:text="${message}"></h1>
+
+        <form action="/submit-rowcol" method="post">
+            <label for="rowInput">Enter a row & column of table:</label>
+            <input id="rowInput" name="rowValue" type="number" step="1" required>
+            <input id="colInput" name="colValue" type="number" step="1" required>
+            <button type="submit">Submit</button>
+        </form>
+
+        <h2 th:text="${round}"></h2>
+
+        <!-- Iterate over rows -->
+        <div class="button-row" th:each="row : ${buttons}">
+            <!-- Iterate over buttons in the row -->
+            <form th:each="label : ${row}" th:action="@{/submit-button}" method="post">
+                <button type="submit" th:name="buttonValue" th:value="${label}" th:text="${label}"></button>
+            </form>
+        </div>
+
+        <form action="/submit-reset" method="post">
+            <button type="submit">Reset Game</button>
+        </form>
+    </div>
+
+</body>
+</html>

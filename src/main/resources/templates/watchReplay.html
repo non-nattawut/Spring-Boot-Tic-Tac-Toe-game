@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Watch Replay</title>
+    <style>
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 30%;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            width: 50px;
+            height: 50px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        td {
+            background-color: #f9f9f9;
+        }
+        td.activeX {
+            background-color: #4CAF50;
+            color: white;
+        }
+        td.activeO {
+            background-color: #69c26c;
+            color: white;
+        }
+        .button {
+            margin: 20px auto;
+            display: block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Watch Replay</h1>
+
+    <table>
+        <tbody>
+        <!-- Generate rows dynamically -->
+        <tr th:each="rowIdx : ${#numbers.sequence(0, replay.row - 1)}">
+            <td th:each="colIdx : ${#numbers.sequence(0, replay.col - 1)}" th:id="'cell-' + ${rowIdx} + '-' + ${colIdx}">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- Button to show the next move -->
+    <button class="button" onclick="showNextStep()">Next Step</button>
+
+    <script th:inline="javascript">
+        // JavaScript to handle replay
+        let currentStep = 0;
+
+        // Injecting Thymeleaf data into JavaScript
+        const winner = /*[[${winner}]]*/
+        const moves = /*[[${moves}]]*/;
+        const totalSteps = moves.length;
+
+        // Define showNextStep globally
+        function showNextStep() {
+            if (currentStep < totalSteps) {
+                // Get the current move (e.g., "0-0")
+                const move = moves[currentStep];
+                const [row, col] = move.split('-').map(Number);
+
+                // Log for debugging
+                console.log("STEP : ", currentStep, "totalSteps : ", totalSteps);
+                console.log("Moves ", moves);
+                console.log("Current Move: ", move);
+                console.log("Row: ", row, "Col: ", col);
+
+                // Highlight the corresponding cell
+                const cell = document.getElementById(`cell-${row}-${col}`);
+                if (cell) {
+                    if (currentStep%2 == 0){
+                        cell.classList.add("activeX");
+                        cell.textContent = "X";
+                    }else{
+                        cell.classList.add("activeO");
+                        cell.textContent = "O";
+                    }
+                    currentStep++;
+                } else {
+                    console.error(`Cell with id cell-${row}-${col} not found.`);
+                }
+            } else {
+                console.log(winner);
+                if (winner != "DRAW"){
+                    alert("Replay complete!\n" + "Winner is " + winner);
+                }else{
+                    alert("Replay complete!\n" + "GAME is DRAW!");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

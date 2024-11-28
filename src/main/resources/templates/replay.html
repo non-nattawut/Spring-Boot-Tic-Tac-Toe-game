@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Replay List</title>
+    <style>
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h1 style="text-align: center;">Replay List</h1>
+
+<!-- Alert message -->
+<div th:if="${message}" style="text-align: center; color: green;">
+    <p th:text="${message}"></p>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Winner</th>
+        <th>Row</th>
+        <th>Column</th>
+        <th>Play Order</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="replay : ${replays}">
+        <td th:text="${replay.id}"></td>
+        <td th:text="${replay.winner}"></td>
+        <td th:text="${replay.row}"></td>
+        <td th:text="${replay.col}"></td>
+        <td th:text="${replay.playOrder}"></td>
+        <td>
+            <form th:action="@{/watchReplay}" method="post">
+                <!-- Hidden inputs for the DTO fields -->
+                <input type="hidden" name="id" th:value="${replay.id}">
+                <input type="hidden" name="winner" th:value="${replay.winner}">
+                <input type="hidden" name="row" th:value="${replay.row}">
+                <input type="hidden" name="col" th:value="${replay.col}">
+                <input type="hidden" name="playOrder" th:value="${replay.playOrder}">
+                <!-- Submit button -->
+                <button type="submit" class="button">Watch</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
